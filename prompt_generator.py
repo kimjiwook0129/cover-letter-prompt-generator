@@ -71,7 +71,9 @@ with st.form(key='pasting_text'):
             label="Resumé?",
             value=True
         )
-
+    character_limit = st.number_input(
+                label="Character limit for the cover letter? (Optional)", min_value=0, max_value=10000, value=0
+            )
     job_description = st.text_area(
         label="Job Description:",
         height = 300
@@ -99,7 +101,8 @@ if submit_button:
             job_description = job_description,
             address_street = address1,
             address_city = address2,
-            resume_attached = RESUME_ATTACHED_SUBPROMPT if upload_resume else ""
+            resume_attached = RESUME_ATTACHED_SUBPROMPT if upload_resume else "",
+            character_limit_statement = CHARACTER_LIMIT_SUBPROMPT.format(character_limit = character_limit) if character_limit > 0 else ""
         )
 
         st.write(cover_letter_prompt)

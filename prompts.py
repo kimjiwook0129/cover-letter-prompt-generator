@@ -2,6 +2,7 @@ COVER_LETTER_PROMPT = """
 ```
 [[Instruction]]
 I am applying for {position} position at this company: {company}.
+{character_limit_statement}
 And you are going to generate a cover letter for me based on:
 - [[Job Description provided by the company]]
 - [[Cover Letter Instruction]]
@@ -54,3 +55,5 @@ Sincerely,
 """
 
 RESUME_ATTACHED_SUBPROMPT = """- My résumé attached"""
+
+CHARACTER_LIMIT_SUBPROMPT = """The cover letter must be less than {character_limit} characters. Strictly write a cover letter that is shorter than {character_limit} characters."""
