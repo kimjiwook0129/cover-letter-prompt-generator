@@ -1,13 +1,9 @@
 import json
 import time
 import streamlit as st
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.chat_models import ChatOllama
 from prompts import *
 from utils.data_process import load_data, save_data
 from datetime import datetime
-
-
 
 FILEDIR = "data.json"
 DATA = load_data(FILEDIR)
@@ -88,9 +84,6 @@ if submit_button:
     else:
         position, company = position.title(), company.title()
         
-        # llm = ChatOllama(model = "llama3", temperature = 0.1)
-        # prompt = ChatPromptTemplate.from_template(COVER_LETTER_PROMPT)
-
         cover_letter_prompt = COVER_LETTER_PROMPT.format(
             position=position,
             company=company,
