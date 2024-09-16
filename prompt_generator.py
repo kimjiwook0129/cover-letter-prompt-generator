@@ -28,7 +28,7 @@ with st.form(key='pasting_text'):
             min_value=datetime(2000, 1, 1), max_value=datetime(2100, 12, 31)
         )
 
-    upload_resume = st.checkbox(label="Resumé?", value=True)
+    upload_resume = st.checkbox(label="Resumé? (Upload your resumé on GPT if checked along with the generated prompt.)", value=True)
     character_limit = st.number_input(
         label="Character limit for the cover letter? (Optional)", min_value=0, max_value=10000, value=0
     )
