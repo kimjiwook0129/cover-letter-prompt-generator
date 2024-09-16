@@ -62,7 +62,7 @@ with st.form(key='pasting_text'):
         )
 
     upload_resume = st.checkbox(
-            label="Resumé?",
+            label="Resumé? (Upload your resumé on GPT if checked along with the generated prompt.)",
             value=True
         )
     character_limit = st.number_input(
